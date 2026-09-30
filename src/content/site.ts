@@ -216,7 +216,10 @@ export const ventures = {
       description:
         "AI consulting for company problems, LLM training & fine-tuning, and expert AI engineers and FDEs on demand.",
       domains: ["AI CONSULTING", "LLM TRAINING & FINE-TUNING", "AI ENGINEERS", "FDEs"],
-      cta: { label: "COMING SOON", href: null as string | null },
+      cta: {
+        label: "EXPLORE STACKNITY-AI",
+        href: "https://ravishankarbera.github.io/stacknity.ai/index.html" as string | null,
+      },
     },
   ],
 } as const;
