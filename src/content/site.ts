@@ -7,70 +7,70 @@
 export const profile = {
   name: "RAVI SHANKAR BERA",
   firstName: "RAVI",
-  role: "Quality Engineering Leader",
-  positioning: "Quality Engineering Leader | Test Automation Specialist | Technology Entrepreneur",
+  role: "Founder & CEO",
+  positioning: "Founder & CEO | Technology · Travel · Legal · AI",
   headline: "HI, I'M RAVI.",
-  subHeadline: "QUALITY ENGINEERING LEADER",
+  subHeadline: "FOUNDER & CEO",
   rotatingKeywords: [
-    "TEST AUTOMATION",
-    "QUALITY ENGINEERING",
-    "AI",
+    "STACKNITY TECHNOLOGIES",
+    "MY MINUTE TRAVEL",
+    "RSB & CO",
+    "STACKNITY-AI",
     "TECHNOLOGY",
     "LEADERSHIP",
-    "ENTREPRENEURSHIP",
   ],
   tagline:
-    "Building quality-driven technology experiences through automation, engineering leadership and continuous innovation.",
+    "Founder & CEO of four companies — building technology, travel, legal and AI ventures with a quality-obsessed engineering mindset.",
   location: "Bengaluru, Karnataka, India",
   currentRole: {
-    label: "MANAGER — QUALITY ASSURANCE",
-    company: "HEXAWARE TECHNOLOGIES",
+    label: "FOUNDER & CEO — 4 COMPANIES",
+    company: "STACKNITY GROUP OF VENTURES",
   },
-  avatarAlt: "Stylised 3D avatar of technology leader Ravi Shankar Bera",
+  avatarAlt: "Stylised 3D avatar of founder Ravi Shankar Bera",
 } as const;
 
 export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/ravishankarbera/",
   stacknity: "https://www.stacknity.com/",
   // Configurable — Ravi can update without redesign. Null = show placeholder button.
-  email: null as string | null, // e.g. "hello@ravishankarbera.com"
+  email: "advocate.ravishankarbera@gmail.com" as string | null,
   resumeUrl: null as string | null, // e.g. "/Ravi-Shankar-Bera-Resume.pdf"
 } as const;
 
 export const navigation = [
   { label: "ABOUT", href: "#about" },
-  { label: "EXPERIENCE", href: "#experience" },
+  { label: "VENTURES", href: "#ventures" },
+  { label: "JOURNEY", href: "#experience" },
   { label: "EXPERTISE", href: "#expertise" },
   { label: "CERTIFICATIONS", href: "#certifications" },
-  { label: "VENTURES", href: "#ventures" },
   { label: "INSIGHTS", href: "#insights" },
   { label: "CONTACT", href: "#contact" },
 ] as const;
 
 export const about = {
-  heading: "MORE THAN A QA PROFESSIONAL.",
+  heading: "FOUNDER FIRST. ENGINEER AT HEART.",
   paragraphs: [
-    "Ravi Shankar Bera is a technology professional and QA leader with 6+ years of experience across automation, manual testing, functional testing, quality engineering and team leadership.",
-    "His professional journey has evolved from engineering and hands-on QA responsibilities into automation and quality leadership, while continuing to explore technology, entrepreneurship and digital innovation.",
+    "Ravi Shankar Bera is the Founder & CEO of four companies spanning technology, travel, legal services and artificial intelligence — with a professional foundation of 6+ years across quality engineering, test automation and team leadership.",
+    "His journey evolved from engineering and hands-on QA leadership into entrepreneurship — carrying a quality-obsessed, automation-first mindset into every venture he builds.",
   ],
   cards: [
     {
       index: "01",
-      title: "ENGINEER",
-      items: ["Automation", "Testing", "Quality Engineering"],
-      description: "Hands-on roots in systems, QA craft and reliable delivery.",
+      title: "FOUNDER",
+      items: ["Four Companies", "Vision", "Execution"],
+      description: "Building and leading ventures across tech, travel, legal and AI.",
     },
     {
       index: "02",
       title: "LEADER",
       items: ["Team Leadership", "Strategy", "Process Improvement"],
-      description: "Leading quality teams with clarity, process and ownership.",
+      description: "Leading teams with clarity, process and ownership.",
     },
     {
       index: "03",
       title: "BUILDER",
       items: ["Technology", "Entrepreneurship", "Innovation"],
-      description: "Building ventures and ideas beyond the day-to-day.",
+      description: "Obsessed with quality, automation and continuous innovation.",
     },
   ],
 } as const;
@@ -79,8 +79,8 @@ export const journeyStages = [
   "SYSTEM ENGINEERING",
   "QUALITY ASSURANCE",
   "TEST AUTOMATION",
-  "ASSISTANT MANAGER",
-  "MANAGER — QUALITY ASSURANCE",
+  "LEADERSHIP",
+  "FOUNDER & CEO",
 ] as const;
 
 export const experience = [
@@ -106,11 +106,23 @@ export const experience = [
     id: "hexaware",
     company: "Hexaware Technologies",
     short: "HEXAWARE",
-    phase: "Current Chapter",
+    phase: "Corporate Leadership",
     role: "Manager — Quality Assurance Team",
     summary:
-      "Leading the Quality Assurance team with a focus on automation-first quality engineering, delivery excellence and continuous improvement.",
+      "Quality Assurance leadership with a focus on automation-first quality engineering, delivery excellence and continuous improvement — the foundation behind a founder's mindset.",
     highlights: ["Quality engineering leadership", "Test automation strategy", "Team mentorship"],
+    current: false,
+    period: null as string | null,
+  },
+  {
+    id: "founder",
+    company: "Founder & CEO — Four Ventures",
+    short: "FOUNDER",
+    phase: "Current Chapter",
+    role: "Founder & Chief Executive Officer",
+    summary:
+      "Leading Stacknity Technologies, My Minute Travel, RSB & Co and Stacknity-ai — building across technology, travel, legal services and artificial intelligence.",
+    highlights: ["Entrepreneurship", "Business strategy", "Multi-company leadership"],
     current: true,
     period: "Present" as string | null,
   },
@@ -165,21 +177,48 @@ export const certifications = [
 ] as const;
 
 export const ventures = {
-  eyebrow: "ENTREPRENEURSHIP",
-  heading: "BUILDING BEYOND THE 9–5",
-  company: "STACKNITY TECHNOLOGIES",
+  eyebrow: "VENTURES",
+  heading: "FOUR COMPANIES. ONE VISION.",
   description:
-    "An entrepreneurial technology initiative associated with Ravi Shankar Bera — exploring how AI, engineering and design come together to build quality-driven digital products.",
-  domains: [
-    "AI",
-    "MACHINE LEARNING",
-    "CYBERSECURITY",
-    "DATA SCIENCE",
-    "UX/UI",
-    "CLOUD COMPUTING",
-    "DIGITAL MARKETING",
+    "Founder & CEO of four companies — each built on the same obsession: quality, trust and execution.",
+  companies: [
+    {
+      index: "01",
+      name: "STACKNITY TECHNOLOGIES",
+      tagline: "Technology services company",
+      description:
+        "Website development, mobile applications, digital marketing and staff augmentation — end-to-end technology execution for businesses.",
+      domains: ["WEBSITES", "MOBILE APPS", "DIGITAL MARKETING", "STAFF AUGMENTATION"],
+      cta: { label: "EXPLORE STACKNITY", href: "https://www.stacknity.com/" as string | null },
+    },
+    {
+      index: "02",
+      name: "MY MINUTE TRAVEL",
+      tagline: "Complete travel company",
+      description:
+        "Affordable flights and complete end-to-end destination packages — travel planned, booked and managed in one place.",
+      domains: ["AFFORDABLE FLIGHTS", "DESTINATION PACKAGES", "END-TO-END TRAVEL"],
+      cta: { label: "COMING SOON", href: null as string | null },
+    },
+    {
+      index: "03",
+      name: "RSB & CO",
+      tagline: "Diverse law firm — All over India",
+      description:
+        "A diverse law firm handling criminal, civil, corporate, trademark, pro-bono and matrimonial matters across India.",
+      domains: ["CRIMINAL", "CIVIL", "CORPORATE", "TRADEMARK", "PRO-BONO", "MATRIMONIAL"],
+      cta: { label: "COMING SOON", href: null as string | null },
+    },
+    {
+      index: "04",
+      name: "STACKNITY-AI",
+      tagline: "AI consulting & engineering",
+      description:
+        "AI consulting for company problems, LLM training & fine-tuning, and expert AI engineers and FDEs on demand.",
+      domains: ["AI CONSULTING", "LLM TRAINING & FINE-TUNING", "AI ENGINEERS", "FDEs"],
+      cta: { label: "COMING SOON", href: null as string | null },
+    },
   ],
-  cta: { label: "EXPLORE STACKNITY", href: "https://www.stacknity.com/" },
 } as const;
 
 export const articles = [
@@ -206,17 +245,17 @@ export const articles = [
   },
 ] as const;
 
-export const drives = ["QUALITY", "INNOVATION", "AUTOMATION", "LEADERSHIP", "LEARNING", "ENTREPRENEURSHIP"] as const;
+export const drives = ["VISION", "QUALITY", "EXECUTION", "LEADERSHIP", "INNOVATION", "ENTREPRENEURSHIP"] as const;
 
 export const contact = {
-  heading: "LET'S BUILD SOMETHING BETTER.",
-  supporting: "For technology, quality engineering, automation, innovation and professional collaboration.",
+  heading: "LET'S BUILD SOMETHING BIGGER.",
+  supporting: "For technology, travel, legal, AI and business collaboration.",
 } as const;
 
 export const siteMeta = {
-  title: "Ravi Shankar Bera — Quality Engineering Leader | Automation | Technology",
+  title: "Ravi Shankar Bera — Founder & CEO | Technology · Travel · Legal · AI",
   description:
-    "Ravi Shankar Bera is a Quality Engineering Leader and Test Automation Specialist at Hexaware Technologies, Bengaluru — building quality-driven technology through automation, leadership and entrepreneurship (Stacknity Technologies).",
+    "Ravi Shankar Bera is the Founder & CEO of Stacknity Technologies, My Minute Travel, RSB & Co and Stacknity-ai — building technology, travel, legal and AI ventures from Bengaluru, India.",
   url: "https://ravishankarbera.github.io/RSBs-Profile", // GitHub Pages canonical — update if a custom domain is added
   ogImage: "/og-cover.jpg", // add real cover in public/ when ready
 } as const;

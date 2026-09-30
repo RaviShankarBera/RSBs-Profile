@@ -5,9 +5,9 @@
   --bg-2: #0b0b10;
   --ink: #f5f6f8;
   --muted: #9aa0ae;
-  --violet: #7c5cff;
+  --violet: #2f6bff;
   --blue: #4f8cff;
-  --cyan: #5ee6eb;
+  --cyan: #8fc3ff;
   --line: rgba(255, 255, 255, 0.09);
   --glass: rgba(255, 255, 255, 0.04);
 }
@@ -36,7 +36,7 @@ body {
 }
 
 ::selection {
-  background: rgba(124, 92, 255, 0.45);
+  background: rgba(47, 107, 255, 0.5);
   color: #fff;
 }
 
@@ -81,7 +81,7 @@ body {
 }
 
 .text-glow {
-  text-shadow: 0 0 40px rgba(124,92,255,0.35);
+  text-shadow: 0 0 44px rgba(47,107,255,0.35);
 }
 
 .hairline {
@@ -134,11 +134,12 @@ body {
 ::-webkit-scrollbar-thumb { background: #23232e; border-radius: 8px; }
 ::-webkit-scrollbar-thumb:hover { background: #343442; }
 
-/* utility: faint grid */
+/* utility: faint blue-textured grid */
 .bg-blueprint {
   background-image:
-    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
-  background-size: 72px 72px;
+    linear-gradient(rgba(120,160,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120,160,255,0.06) 1px, transparent 1px),
+    radial-gradient(ellipse 60% 45% at 50% 0%, rgba(47,107,255,0.12), transparent 70%);
+  background-size: 72px 72px, 72px 72px, cover;
   mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 30%, transparent 75%);
 }

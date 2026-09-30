@@ -25,7 +25,7 @@ export default function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8"
       >
         <a href="#top" className="text-[13px] tracking-[0.22em] font-extrabold">
-          RAVI SHANKAR <span className="text-[#8b7bff]">BERA</span>
+          RAVI SHANKAR <span className="text-[#6f9bff]">BERA</span>
         </a>
 
         <ul className="hidden items-center gap-7 lg:flex">

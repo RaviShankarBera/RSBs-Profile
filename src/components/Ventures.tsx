@@ -5,64 +5,56 @@ export default function Ventures() {
   return (
     <section id="ventures" aria-label="Ventures" className="relative mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-36">
       <Reveal>
-        <Eyebrow>05 — {ventures.eyebrow}</Eyebrow>
+        <Eyebrow>02 — {ventures.eyebrow}</Eyebrow>
         <h2 className="headline-xl mt-4 text-4xl text-white md:text-7xl">{ventures.heading}</h2>
+        <p className="mt-4 max-w-xl text-[15px] text-white/55">{ventures.description}</p>
       </Reveal>
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <Reveal>
-          <div className="glass relative overflow-hidden rounded-3xl p-8 md:p-12">
-            <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#4f8cff]/15 blur-[100px]" />
-            <div className="pointer-events-none absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-[#5ee6eb]/10 blur-[100px]" />
-            <p className="font-mono text-[11px] tracking-[0.32em] text-[#5ee6eb]">FOUNDER-LED INITIATIVE</p>
-            <h3 className="mt-4 text-4xl font-black tracking-tight text-white md:text-5xl">
-              STACKNITY
-              <span className="block text-lg font-bold tracking-[0.3em] text-white/50">TECHNOLOGIES</span>
-            </h3>
-            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/60">{ventures.description}</p>
-            <a
-              href={ventures.cta.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 text-[12px] font-extrabold tracking-[0.18em] text-black transition hover:bg-[#c9c2ff]"
-            >
-              {ventures.cta.label} <span aria-hidden>↗</span>
-            </a>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.1}>
-          <div className="grid h-full grid-cols-2 gap-3">
-            {ventures.domains.map((d) => (
+      <div className="mt-12 grid gap-5 md:grid-cols-2">
+        {ventures.companies.map((c, i) => (
+          <Reveal key={c.name} delay={Math.min(i * 0.07, 0.25)}>
+            <article className="glass group relative flex h-full flex-col overflow-hidden rounded-3xl p-8 transition hover:-translate-y-1 hover:border-[#2f6bff]/50 md:p-10">
               <div
-                key={d}
-                className="glass-soft group flex flex-col justify-between rounded-2xl p-5 transition hover:border-[#7c5cff]/50 hover:bg-white/[0.06]"
-              >
-                <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[#7c5cff] shadow-[0_0_12px_#7c5cff]" />
-                <p className="mt-8 text-[13px] font-extrabold tracking-[0.12em] text-white">{d}</p>
-                <p className="mt-1 font-mono text-[10px] tracking-[0.2em] text-white/35">STACKNITY / 0{i(d)}</p>
+                aria-hidden
+                className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[#2f6bff]/15 blur-[100px] transition group-hover:bg-[#2f6bff]/30"
+              />
+              <div className="flex items-start justify-between">
+                <p className="font-mono text-[11px] tracking-[0.32em] text-[#8fc3ff]">{c.index}</p>
+                <p className="text-[11px] font-bold tracking-[0.2em] text-white/40">{c.tagline.toUpperCase()}</p>
               </div>
-            ))}
-            <p className="col-span-2 px-1 font-mono text-[10px] leading-relaxed tracking-[0.14em] text-white/30">
-              NO INVENTED METRICS · CLIENTS · REVENUE — POSITIONED HONESTLY AS AN ENTREPRENEURIAL TECHNOLOGY
-              INITIATIVE.
-            </p>
-          </div>
-        </Reveal>
+              <h3 className="mt-4 text-3xl font-black tracking-tight text-white md:text-4xl">{c.name}</h3>
+              <p className="mt-4 flex-1 text-[15px] leading-relaxed text-white/60">{c.description}</p>
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {c.domains.map((d) => (
+                  <li
+                    key={d}
+                    className="rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.1em] text-white/65"
+                  >
+                    {d}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8">
+                {c.cta.href ? (
+                  <a
+                    href={c.cta.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 text-[12px] font-extrabold tracking-[0.18em] text-black transition hover:bg-[#c3d6ff]"
+                  >
+                    {c.cta.label} <span aria-hidden>↗</span>
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center gap-3 rounded-full border border-white/12 px-7 py-3.5 text-[12px] font-extrabold tracking-[0.18em] text-white/40">
+                    {c.cta.label}
+                  </span>
+                )}
+              </div>
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#2f6bff]/60 to-transparent opacity-0 transition group-hover:opacity-100" />
+            </article>
+          </Reveal>
+        ))}
       </div>
     </section>
   );
-}
-
-function i(d: string) {
-  const map: Record<string, string> = {
-    AI: "1",
-    "MACHINE LEARNING": "2",
-    CYBERSECURITY: "3",
-    "DATA SCIENCE": "4",
-    "UX/UI": "5",
-    "CLOUD COMPUTING": "6",
-    "DIGITAL MARKETING": "7",
-  };
-  return map[d] ?? "–";
 }

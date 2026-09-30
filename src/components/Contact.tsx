@@ -6,7 +6,7 @@ export default function Contact() {
 
   return (
     <section id="contact" aria-label="Contact" className="relative overflow-hidden border-t border-white/5 py-28 md:py-40">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[30rem] w-[46rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7c5cff]/14 blur-[140px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[30rem] w-[46rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#2f6bff]/16 blur-[140px]" />
       <div className="bg-blueprint pointer-events-none absolute inset-0 opacity-40" />
 
       <div className="relative mx-auto max-w-5xl px-5 text-center md:px-8">
@@ -22,7 +22,7 @@ export default function Contact() {
               href={socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-white px-7 py-3.5 text-[12px] font-extrabold tracking-[0.18em] text-black transition hover:bg-[#c9c2ff]"
+              className="rounded-full bg-white px-7 py-3.5 text-[12px] font-extrabold tracking-[0.18em] text-black transition hover:bg-[#c3d6ff]"
             >
               LINKEDIN ↗
             </a>

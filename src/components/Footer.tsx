@@ -10,9 +10,9 @@ export default function Footer() {
         <div>
           <p className="text-sm font-extrabold tracking-[0.22em] text-white">{profile.name}</p>
           <p className="mt-2 text-[13px] text-white/50">
-            Quality Engineering Leader
+            Founder & CEO
             <br />
-            Automation | Technology | Entrepreneurship
+            Technology | Travel | Legal | AI
           </p>
         </div>
         <nav aria-label="Footer" className="flex flex-wrap gap-5 text-[11px] font-bold tracking-[0.2em]">

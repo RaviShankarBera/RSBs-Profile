@@ -21,7 +21,7 @@ export default function RotatingKeywords({ words }: { words: readonly string[] |
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: reduce ? 0 : -28, opacity: 0 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-gradient-to-r from-[#a78bff] via-[#6ea8ff] to-[#5ee6eb] bg-clip-text font-extrabold text-transparent"
+          className="bg-gradient-to-r from-white via-[#9cc0ff] to-[#2f6bff] bg-clip-text font-extrabold text-transparent"
         >
           {words[index]}
         </motion.span>

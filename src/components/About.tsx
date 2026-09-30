@@ -36,10 +36,10 @@ export default function About() {
               onMouseMove={onMove(i)}
               onMouseLeave={() => setTilt((t) => ({ ...t, [i]: "perspective(900px)" }))}
               style={{ transform: tilt[i] ?? "perspective(900px)" }}
-              className="glass group relative overflow-hidden rounded-2xl p-7 transition-all duration-300 hover:border-[#7c5cff]/50"
+              className="glass group relative overflow-hidden rounded-2xl p-7 transition-all duration-300 hover:border-[#2f6bff]/50"
             >
-              <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#7c5cff]/15 blur-3xl transition group-hover:bg-[#7c5cff]/30" />
-              <p className="font-mono text-xs tracking-[0.3em] text-[#5ee6eb]">{c.index}</p>
+              <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#2f6bff]/15 blur-3xl transition group-hover:bg-[#2f6bff]/30" />
+              <p className="font-mono text-xs tracking-[0.3em] text-[#8fc3ff]">{c.index}</p>
               <h3 className="mt-3 text-2xl font-extrabold tracking-tight text-white">{c.title}</h3>
               <ul className="mt-4 space-y-1.5">
                 {c.items.map((it) => (

@@ -12,7 +12,7 @@ export default function Expertise() {
   return (
     <section id="expertise" aria-label="Expertise" className="relative mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-36">
       <Reveal>
-        <Eyebrow>03 — Expertise</Eyebrow>
+        <Eyebrow>04 — Expertise</Eyebrow>
         <h2 className="headline-xl mt-4 text-4xl text-white md:text-7xl">
           SKILL <span className="text-white/35">ECOSYSTEM.</span>
         </h2>
@@ -44,12 +44,12 @@ export default function Expertise() {
       <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         {visible.map((s, i) => (
           <Reveal key={s.label} delay={Math.min(i * 0.04, 0.3)}>
-            <div className="glass-soft group relative overflow-hidden rounded-xl p-5 transition hover:border-[#5ee6eb]/40 hover:bg-white/[0.06]">
-              <p className="font-mono text-[10px] tracking-[0.28em] text-[#5ee6eb]/80">{s.category.toUpperCase()}</p>
+            <div className="glass-soft group relative overflow-hidden rounded-xl p-5 transition hover:border-[#8fc3ff]/40 hover:bg-white/[0.06]">
+              <p className="font-mono text-[10px] tracking-[0.28em] text-[#8fc3ff]/80">{s.category.toUpperCase()}</p>
               <p className="mt-2 text-[13px] font-extrabold tracking-[0.08em] text-white">{s.label}</p>
               <span
                 aria-hidden
-                className="absolute -bottom-6 -right-6 h-20 w-20 rounded-full bg-[#7c5cff]/15 blur-2xl transition group-hover:bg-[#7c5cff]/35"
+                className="absolute -bottom-6 -right-6 h-20 w-20 rounded-full bg-[#2f6bff]/15 blur-2xl transition group-hover:bg-[#2f6bff]/35"
               />
             </div>
           </Reveal>

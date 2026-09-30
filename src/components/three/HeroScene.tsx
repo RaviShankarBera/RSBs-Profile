@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/purity, react-hooks/immutability -- Three.js scene-graph setup is intentionally imperative */
 import { useMemo, useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Float, ContactShadows } from "@react-three/drei";
+import { Float, ContactShadows, MeshDistortMaterial } from "@react-three/drei";
 import * as THREE from "three";
 
 /* ---------- utilities ---------- */
@@ -96,8 +96,8 @@ function NodeField({ reduced }: { reduced: boolean }) {
           <mesh position={n.pos}>
             <octahedronGeometry args={[0.09, 0]} />
             <meshStandardMaterial
-              color={i % 3 === 0 ? "#5ee6eb" : "#7c5cff"}
-              emissive={i % 3 === 0 ? "#1e6f73" : "#2b1f66"}
+              color={i % 3 === 0 ? "#8fc3ff" : "#2f6bff"}
+              emissive={i % 3 === 0 ? "#1e3f6e" : "#16295e"}
               roughness={0.3}
               metalness={0.7}
             />
@@ -132,7 +132,7 @@ function Avatar({ reduced }: { reduced: boolean }) {
       </mesh>
       <mesh position={[0, -1.47, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <ringGeometry args={[1.18, 1.32, 64]} />
-        <meshBasicMaterial color="#7c5cff" transparent opacity={0.55} side={THREE.DoubleSide} />
+        <meshBasicMaterial color="#2f6bff" transparent opacity={0.6} side={THREE.DoubleSide} />
       </mesh>
 
       {/* torso — modern suit silhouette */}
@@ -173,14 +173,14 @@ function Avatar({ reduced }: { reduced: boolean }) {
       {/* halo ring — leadership motif */}
       <mesh position={[0, 0.72, -0.25]} rotation={[0.25, 0, 0]}>
         <torusGeometry args={[0.62, 0.015, 12, 80]} />
-        <meshBasicMaterial color="#5ee6eb" transparent opacity={0.5} />
+        <meshBasicMaterial color="#8fc3ff" transparent opacity={0.5} />
       </mesh>
 
       {/* chest badge — QA checkpoint */}
       <Float speed={2} floatIntensity={0.6}>
         <mesh position={[0.32, -0.5, 0.48]}>
           <octahedronGeometry args={[0.07, 0]} />
-          <meshStandardMaterial color="#5ee6eb" emissive="#0f4c4f" roughness={0.2} metalness={0.8} />
+          <meshStandardMaterial color="#8fc3ff" emissive="#14315e" roughness={0.2} metalness={0.8} />
         </mesh>
       </Float>
     </group>
@@ -211,10 +211,70 @@ function GlassPanels({ reduced }: { reduced: boolean }) {
           </mesh>
           <mesh position={[p.pos[0], p.pos[1] - 0.22, p.pos[2] + 0.03]} rotation={p.rot}>
             <boxGeometry args={[0.7, 0.025, 0.005]} />
-            <meshBasicMaterial color={i % 2 ? "#5ee6eb" : "#7c5cff"} transparent opacity={0.8} />
+            <meshBasicMaterial color={i % 2 ? "#8fc3ff" : "#2f6bff"} transparent opacity={0.85} />
           </mesh>
         </Float>
       ))}
+    </group>
+  );
+}
+
+/* ---------- liquid obsidian elements (distorting chrome) ---------- */
+function LiquidChrome({ reduced, compact }: { reduced: boolean; compact: boolean }) {
+  const knot = useRef<THREE.Mesh>(null);
+
+  useFrame((state) => {
+    if (!knot.current || reduced) return;
+    const t = state.clock.elapsedTime;
+    knot.current.rotation.x = t * 0.18;
+    knot.current.rotation.y = t * 0.24;
+  });
+
+  return (
+    <group>
+      {/* flanking liquid-metal blobs */}
+      <Float speed={reduced ? 0 : 1.8} rotationIntensity={0.4} floatIntensity={2}>
+        <mesh position={[-3.1, 0.1, -0.6]}>
+          <icosahedronGeometry args={[0.55, 24]} />
+          <MeshDistortMaterial
+            color="#0b0b12"
+            roughness={0.12}
+            metalness={0.95}
+            distort={0.45}
+            speed={reduced ? 0 : 2.2}
+          />
+        </mesh>
+      </Float>
+      {!compact && (
+        <Float speed={reduced ? 0 : 1.4} rotationIntensity={0.3} floatIntensity={1.6}>
+          <mesh position={[3.2, -0.5, -0.9]}>
+            <icosahedronGeometry args={[0.7, 24]} />
+            <MeshDistortMaterial
+              color="#0d1220"
+              roughness={0.15}
+              metalness={0.9}
+              distort={0.4}
+              speed={reduced ? 0 : 1.8}
+            />
+          </mesh>
+        </Float>
+      )}
+      {/* liquid torus knot halo */}
+      <mesh ref={knot} position={[0, 1.9, -2.2]}>
+        <torusKnotGeometry args={[0.5, 0.16, 120, 20]} />
+        <MeshDistortMaterial
+          color="#101828"
+          roughness={0.2}
+          metalness={0.85}
+          distort={0.3}
+          speed={reduced ? 0 : 1.5}
+        />
+      </mesh>
+      {/* thin chrome ring catching the blue light */}
+      <mesh position={[0, -1.44, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <ringGeometry args={[1.36, 1.4, 64]} />
+        <meshBasicMaterial color="#e8eefc" transparent opacity={0.35} side={THREE.DoubleSide} />
+      </mesh>
     </group>
   );
 }
@@ -246,12 +306,13 @@ export default function HeroScene() {
       aria-hidden
     >
       <ambientLight intensity={0.55} />
-      <spotLight position={[4, 6, 5]} angle={0.5} intensity={90} color="#7c5cff" />
+      <spotLight position={[4, 6, 5]} angle={0.5} intensity={90} color="#2f6bff" />
       <pointLight position={[-5, 2, 3]} intensity={18} color="#4f8cff" />
-      <pointLight position={[2, -1, 4]} intensity={10} color="#5ee6eb" />
+      <pointLight position={[2, -1, 4]} intensity={10} color="#8fc3ff" />
       <directionalLight position={[0, 4, 6]} intensity={0.7} color="#ffffff" />
 
       <Avatar reduced={reduced} />
+      <LiquidChrome reduced={reduced} compact={isMobile} />
       <GlassPanels reduced={reduced || isMobile} />
       <NodeField reduced={reduced} />
       <Particles count={isMobile ? 160 : 550} reduced={reduced} />

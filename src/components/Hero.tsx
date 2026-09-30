@@ -6,7 +6,7 @@ import { profile } from "@/content/site";
 
 const HeroScene = dynamic(() => import("./three/HeroScene"), {
   ssr: false,
-  loading: () => <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(124,92,255,0.18),transparent_65%)]" />,
+  loading: () => <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(47,107,255,0.2),transparent_65%)]" />,
 });
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -72,10 +72,10 @@ export default function Hero() {
           className="mt-8 flex flex-wrap items-center gap-4"
         >
           <a
-            href="#experience"
-            className="rounded-full bg-white px-7 py-3.5 text-[12px] font-extrabold tracking-[0.18em] text-black transition hover:bg-[#c9c2ff]"
+            href="#ventures"
+            className="rounded-full bg-white px-7 py-3.5 text-[12px] font-extrabold tracking-[0.18em] text-black transition hover:bg-[#c3d6ff]"
           >
-            VIEW MY JOURNEY
+            EXPLORE MY VENTURES
           </a>
           <a
             href="#contact"

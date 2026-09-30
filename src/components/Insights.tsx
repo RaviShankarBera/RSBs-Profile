@@ -21,7 +21,7 @@ export default function Insights() {
             <Reveal key={a.id}>
               <article className="glass group flex h-full flex-col overflow-hidden rounded-2xl">
                 <div className="flex items-center justify-between border-b border-white/8 px-7 py-4">
-                  <span className="font-mono text-[11px] tracking-[0.24em] text-[#5ee6eb]">
+                  <span className="font-mono text-[11px] tracking-[0.24em] text-[#8fc3ff]">
                     {a.index} / {a.category}
                   </span>
                   <span className="text-[11px] tracking-[0.14em] text-white/35">{a.date}</span>
@@ -46,7 +46,7 @@ export default function Insights() {
                     )}
                   </div>
                 </div>
-                <div className="h-1 bg-gradient-to-r from-[#7c5cff] via-[#4f8cff] to-[#5ee6eb] opacity-0 transition group-hover:opacity-100" />
+                <div className="h-1 bg-gradient-to-r from-white via-[#4f8cff] to-[#2f6bff] opacity-0 transition group-hover:opacity-100" />
               </article>
             </Reveal>
           ))}

@@ -23,7 +23,7 @@ export default function Drives() {
               >
                 {d}
               </span>
-              <span className="h-2 w-2 rounded-full bg-[#7c5cff]" aria-hidden />
+              <span className="h-2 w-2 rounded-full bg-[#2f6bff]" aria-hidden />
             </span>
           ))}
         </div>
