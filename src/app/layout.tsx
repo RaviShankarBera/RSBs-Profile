@@ -46,32 +46,37 @@ export const metadata: Metadata = {
     description: siteMeta.description,
     images: [siteMeta.ogImage],
   },
+  alternates: { canonical: siteMeta.url },
   robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const base = siteMeta.url;
+  const personId = `${base}/#ravi`;
+  const orgs = [
+    { "@type": "Organization", "@id": `${base}/#stacknity-technologies`, name: "Stacknity Technologies", url: socialLinks.stacknity, description: "Website development, mobile applications, digital marketing and staff augmentation.", founder: { "@id": personId } },
+    { "@type": "Organization", "@id": `${base}/#stacknity-ai`, name: "Stacknity.ai", url: socialLinks.stacknityAi, description: "AI consulting for company problems, LLM training and fine-tuning, and expert AI engineers and FDEs.", founder: { "@id": personId } },
+    { "@type": "Organization", "@id": `${base}/#my-minute-travel`, name: "My Minute Travel", description: "A complete travel company offering affordable flights and end-to-end destination packages.", founder: { "@id": personId } },
+    { "@type": "LegalService", "@id": `${base}/#rsb-and-co`, name: "RSB & Co", description: "A diverse law firm handling criminal, civil, corporate, trademark, pro bono and matrimonial matters across India.", areaServed: "IN", founder: { "@id": personId } },
+  ];
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Ravi Shankar Bera",
-    jobTitle: "Founder & CEO",
-    worksFor: { "@type": "Organization", name: "Stacknity Technologies" },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Bengaluru",
-      addressRegion: "Karnataka",
-      addressCountry: "IN",
-    },
-    url: siteMeta.url,
-    sameAs: [socialLinks.linkedin, socialLinks.stacknity].filter(Boolean),
-    knowsAbout: [
-      "Quality Engineering",
-      "Test Automation",
-      "Tricentis Tosca",
-      "API Testing",
-      "SAP Testing",
-      "Agile",
-      "Project Management",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": personId,
+        name: "Ravi Shankar Bera",
+        alternateName: ["Ravishankar Bera", "Ravi Bera"],
+        jobTitle: "Founder & CEO",
+        description: siteMeta.description,
+        worksFor: orgs.map((o) => ({ "@id": o["@id"] })),
+        address: { "@type": "PostalAddress", addressLocality: "Bengaluru", addressRegion: "Karnataka", addressCountry: "IN" },
+        url: siteMeta.url,
+        sameAs: [socialLinks.linkedin, socialLinks.github, socialLinks.stacknity, socialLinks.stacknityAi],
+        knowsAbout: ["Artificial Intelligence", "Quality Engineering", "Test Automation", "Tricentis Tosca", "API Testing", "SAP Testing", "Web Development", "Law"],
+      },
+      ...orgs,
+      { "@type": "ProfilePage", url: siteMeta.url, name: siteMeta.title, mainEntity: { "@id": personId } },
     ],
   };
 

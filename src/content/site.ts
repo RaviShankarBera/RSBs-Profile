@@ -31,7 +31,9 @@ export const profile = {
 
 export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/ravishankarbera/",
-  stacknity: "https://www.stacknity.com/",
+  stacknity: "https://ravishankarbera.github.io/Stacknity-Technologies/",
+  stacknityAi: "https://ravishankarbera.github.io/stacknity.ai/",
+  github: "https://github.com/RaviShankarBera",
   // Configurable — Ravi can update without redesign. Null = show placeholder button.
   email: "advocate.ravishankarbera@gmail.com" as string | null,
   resumeUrl: null as string | null, // e.g. "/Ravi-Shankar-Bera-Resume.pdf"
@@ -189,7 +191,7 @@ export const ventures = {
       description:
         "Website development, mobile applications, digital marketing and staff augmentation — end-to-end technology execution for businesses.",
       domains: ["WEBSITES", "MOBILE APPS", "DIGITAL MARKETING", "STAFF AUGMENTATION"],
-      cta: { label: "EXPLORE STACKNITY", href: "https://www.stacknity.com/" as string | null },
+      cta: { label: "EXPLORE STACKNITY", href: "https://ravishankarbera.github.io/Stacknity-Technologies/" as string | null },
     },
     {
       index: "02",
@@ -218,7 +220,7 @@ export const ventures = {
       domains: ["AI CONSULTING", "LLM TRAINING & FINE-TUNING", "AI ENGINEERS", "FDEs"],
       cta: {
         label: "EXPLORE STACKNITY-AI",
-        href: "https://ravishankarbera.github.io/stacknity.ai/index.html" as string | null,
+        href: "https://ravishankarbera.github.io/stacknity.ai/" as string | null,
       },
     },
   ],
